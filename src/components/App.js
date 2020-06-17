@@ -81,10 +81,30 @@ export default function App() {
   //////////////// EVENT HANDLERS ////////////////
   //////////////// EVENT HANDLERS ////////////////
   const onInputChange = evt => {
-    const name = evt.target.name
-    const value = evt.target.value
+    // const name = evt.target.name
+    // const value = evt.target.value
+    const { name, value } = evt.target
 
     // 🔥 STEP 11- RUN VALIDATION WITH YUP
+    Yup
+      .reach(formSchema, name)
+      //we can then run validate using the value
+      .validate(value)
+      // if the validation is successful, we can clear the error message
+      .then(valid => {
+        setFormValues({
+          ...formErrors,
+          [name]: ""
+        });
+      })
+      /* if the validation is unsuccessful, we can set the error message to the message 
+        returned from yup (that we created in our schema) */
+      .catch(err => {
+        setFormValues({
+          ...formErrors,
+          [name]: err.errors[0]
+        });
+      });
 
     setFormValues({
       ...formValues,
