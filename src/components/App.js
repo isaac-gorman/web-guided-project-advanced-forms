@@ -113,9 +113,10 @@ export default function App() {
     const newFriend = {
       username: formValues.username.trim(),
       email: formValues.email.trim(),
-      role: formValues.role.trim(),
-      civil: formValues.civil.trim(),
+      role: formValues.role,
+      civil: formValues.civil,
       // 🔥 STEP 8- WHAT ABOUT HOBBIES?
+      hobbies: formValues.hobbies,
     }
     // 🔥 STEP 9- POST NEW FRIEND USING HELPER
   }
