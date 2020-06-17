@@ -91,7 +91,7 @@ export default function App() {
       //we can then run validate using the value
       .validate(value)
       // if the validation is successful, we can clear the error message
-      .then(valid => {
+      .then(() => {
         setFormErrors({
           ...formErrors,
           [name]: ""
@@ -102,7 +102,7 @@ export default function App() {
       .catch(err => {
         setFormErrors({
           ...formErrors,
-          [name]: err.errors[0]
+          [name]: err.errors[0] // investigate
         });
       });
 
