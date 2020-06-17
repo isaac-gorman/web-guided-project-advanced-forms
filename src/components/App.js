@@ -103,8 +103,8 @@ export default function App() {
         setFormErrors({
           ...formErrors,
           [name]: err.errors[0] // investigate
-        });
-      });
+        })
+      })
 
     setFormValues({
       ...formValues,
