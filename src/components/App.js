@@ -67,7 +67,7 @@ export default function App() {
     //    and regardless of success or failure, the form should reset
     axios.post('http://localhost:4000/friends', newFriend)
       .then(res => {
-        setFriends([ ...friends, res.data ])
+        setFriends([...friends, res.data])
       })
       .catch(err => {
         debugger
@@ -133,7 +133,10 @@ export default function App() {
 
   useEffect(() => {
     // 🔥 STEP 10- ADJUST THE STATUS OF `disabled` EVERY TIME `formValues` CHANGES
-  }, [])
+    formSchema.isValid(formValues).then(valid => {
+      setDisabled(!valid);
+    })
+  }, [formValues])
 
   return (
     <div className='container'>
