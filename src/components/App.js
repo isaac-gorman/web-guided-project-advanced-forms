@@ -95,7 +95,7 @@ export default function App() {
         setFormErrors({
           ...formErrors,
           [name]: ""
-        });
+        })
       })
       /* if the validation is unsuccessful, we can set the error message to the message 
         returned from yup (that we created in our schema) */
@@ -154,7 +154,7 @@ export default function App() {
   useEffect(() => {
     // 🔥 STEP 10- ADJUST THE STATUS OF `disabled` EVERY TIME `formValues` CHANGES
     formSchema.isValid(formValues).then(valid => {
-      setDisabled(!valid);
+      setDisabled(!valid)
     })
   }, [formValues])
 
