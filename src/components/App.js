@@ -96,7 +96,11 @@ export default function App() {
     // 🔥 STEP 7- IMPLEMENT!
     // a) pull the `name` of the checkbox from the event
     // b) pull whether `checked` true or false, from the event
+    const { name, checked } = evt.target
     // c) set a new state for the whole form
+    setFormValues({
+      // ?????????????????????????????
+    })
   }
 
   const onSubmit = evt => {
