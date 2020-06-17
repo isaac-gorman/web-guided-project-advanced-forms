@@ -34,7 +34,7 @@ const initialFormErrors = {
   civil: '',
 }
 const initialFriends = []
-const initialDisabled = true
+const initialDisabled = false
 
 
 export default function App() {
@@ -117,7 +117,8 @@ export default function App() {
       civil: formValues.civil,
       // 🔥 STEP 8- WHAT ABOUT HOBBIES?
       hobbies: Object.keys(formValues.hobbies)
-        .filter(hobbieName => (formValues[hobbieName] === true))
+        // MUAHAHAHAHAHA GOT IT
+        .filter(hobbieName => (formValues.hobbies[hobbieName] === true))
     }
     // 🔥 STEP 9- POST NEW FRIEND USING HELPER
     postNewFriend(newFriend)
