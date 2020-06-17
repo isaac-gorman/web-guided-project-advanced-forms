@@ -73,7 +73,7 @@ export default function App() {
         debugger
       })
       .finally(() => {
-        // reset the form
+        setFormValues(initialFormValues)
       })
   }
 
