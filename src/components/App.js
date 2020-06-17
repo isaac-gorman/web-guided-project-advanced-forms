@@ -22,8 +22,8 @@ const initialFormValues = {
   civil: '',
   ///// CHECKBOXES /////
   hobbies: {                   // ['hiking', 'reading']
-    hiking: true,
-    reading: true,
+    hiking: false,
+    reading: false,
     coding: false,
   },
 }
@@ -120,6 +120,7 @@ export default function App() {
         .filter(hobbieName => (formValues[hobbieName] === true))
     }
     // 🔥 STEP 9- POST NEW FRIEND USING HELPER
+    postNewFriend(newFriend)
   }
 
   //////////////// SIDE EFFECTS ////////////////
