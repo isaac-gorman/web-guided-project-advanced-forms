@@ -95,15 +95,30 @@ export default function FriendForm(props) {
         {/* ////////// CHECKBOXES ////////// */}
         {/* ////////// CHECKBOXES ////////// */}
         <label>Hiking
-
+          <input
+            name='hiking'
+            type="checkbox"
+            onChange={onCheckboxChange}
+            checked={values.hobbies.hiking}
+          />
         </label>
 
         <label>Reading
-
+          <input
+            name='reading'
+            type="checkbox"
+            onChange={onCheckboxChange}
+            checked={values.hobbies.reading}
+          />
         </label>
 
         <label>Coding
-
+          <input
+            name='coding'
+            type="checkbox"
+            onChange={onCheckboxChange}
+            checked={values.hobbies.coding}
+          />
         </label>
       </div>
     </form>
