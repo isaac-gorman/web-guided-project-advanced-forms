@@ -21,9 +21,9 @@ const initialFormValues = {
   ///// RADIO BUTTONS /////
   civil: '',
   ///// CHECKBOXES /////
-  hobbies: {
-    hiking: false,
-    reading: false,
+  hobbies: {                   // ['hiking', 'reading']
+    hiking: true,
+    reading: true,
     coding: false,
   },
 }
@@ -116,7 +116,8 @@ export default function App() {
       role: formValues.role,
       civil: formValues.civil,
       // 🔥 STEP 8- WHAT ABOUT HOBBIES?
-      hobbies: formValues.hobbies,
+      hobbies: Object.keys(formValues.hobbies)
+        .filter(hobbieName => (formValues[hobbieName] === true))
     }
     // 🔥 STEP 9- POST NEW FRIEND USING HELPER
   }
